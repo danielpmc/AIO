@@ -5,7 +5,7 @@ MAINTAINER danielpmc, <danielpd93@gmail.com>
 RUN apt update \
     && apt upgrade -y \
     && apt -y install curl software-properties-common locales git \
-    && useradd -d /home/container -m container
+    && useradd -d /home/container -m container 
 
     # Ensure UTF-8
 RUN locale-gen en_US.UTF-8
@@ -14,7 +14,8 @@ ENV LC_ALL en_US.UTF-8
 
     # NodeJS
 RUN curl -sL https://deb.nodesource.com/setup_11.x | bash - \
-    && apt -y install nodejs
+    && apt -y install nodejs \
+    && apt -y install ffmpeg
 
 USER container
 ENV  USER container
