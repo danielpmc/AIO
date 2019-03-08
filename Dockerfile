@@ -15,7 +15,8 @@ ENV LC_ALL en_US.UTF-8
     # NodeJS
 RUN curl -sL https://deb.nodesource.com/setup_11.x | bash - \
     && apt -y install nodejs \
-    && apt -y install ffmpeg
+    && apt -y install ffmpeg \
+    && apt -y install make
 
 USER container
 ENV  USER container
