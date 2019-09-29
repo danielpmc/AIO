@@ -24,7 +24,7 @@ RUN curl -sL https://deb.nodesource.com/setup_11.x | bash - \
     && apt -y install build-essential
     
     # Python 2 & 3
-RUN apt -y install python python-pip python3 python3-pip python3.7
+RUN apt -y install python python-pip python3 python3-pip python3.6
 
 USER container
 ENV  USER container
