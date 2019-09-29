@@ -7,6 +7,10 @@ RUN apt update \
     && apt -y install curl software-properties-common locales git \
     && useradd -d /home/container -m container 
 
+    # Grant sudo permissions to container user for commands
+RUN apt-get update && \
+    apt-get -y install sudo
+
     # Ensure UTF-8
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
@@ -18,6 +22,9 @@ RUN curl -sL https://deb.nodesource.com/setup_11.x | bash - \
     && apt -y install ffmpeg \
     && apt -y install make \
     && apt -y install build-essential
+    
+    # Python 2 & 3
+RUN apt -y install python python-pip python3 python3-pip python3.7
 
 USER container
 ENV  USER container
