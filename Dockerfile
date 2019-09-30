@@ -5,7 +5,9 @@ MAINTAINER danielpmc, <danielpd93@gmail.com>
 RUN apt update \
     && apt upgrade -y \
     && apt -y install curl software-properties-common locales git \
-    && useradd -d /home/container -m container 
+    && useradd -d /home/container -m container \
+    && add-apt-repository ppa:jonathonf/python-3.6 \
+    && apt-get update
 
     # Grant sudo permissions to container user for commands
 RUN apt-get update && \
