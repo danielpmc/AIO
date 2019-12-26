@@ -6,7 +6,6 @@ RUN apt update \
     && apt upgrade -y \
     && apt -y install curl software-properties-common locales git \
     && useradd -d /home/container -m container \
-    && add-apt-repository ppa:jonathonf/python-3.6 \
     && apt-get update
 
     # Grant sudo permissions to container user for commands
@@ -26,7 +25,7 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
     && apt -y install build-essential
     
     # Python 2 & 3
-RUN apt -y install python python-pip python3 python3-pip python3.6
+RUN apt -y install python python-pip python3 python3-pip
 
 USER container
 ENV  USER container
