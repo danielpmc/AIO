@@ -22,7 +22,9 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
     && apt -y install nodejs \
     && apt -y install ffmpeg \
     && apt -y install make \
-    && apt -y install build-essential
+    && apt -y install build-essential \
+    && apt -y install wget \ 
+    && apt -y install curl
     
     # Python 2 & 3
 RUN apt -y install python python-pip python3 python3-pip
