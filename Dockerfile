@@ -25,10 +25,20 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
     && apt -y install build-essential \
     && apt -y install wget \ 
     && apt -y install curl \
-    && apt -y install neofetch \
-    && add-apt-repository -y ppa:webupd8team/java \
-    && apt-get -y update \
-    && apt -y install oracle-java8-installer
+    && apt -y install neofetch 
+    
+# Install basic software support
+RUN apt-get update && \
+    apt-get install --yes software-properties-common
+
+# Add java to apt
+RUN add-apt-repository ppa:webupd8team/java && \
+    echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
+    echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
+
+# Install Java 8
+RUN apt-get update && \
+    apt-get --yes --no-install-recommends install oracle-java8-installer
     
     # Python 2 & 3
 RUN apt -y install python python-pip python3 python3-pip
