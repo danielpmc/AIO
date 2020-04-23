@@ -37,7 +37,7 @@ RUN add-apt-repository ppa:webupd8team/java && \
 
 # Install Java 8
 RUN apt-get update && \
-    apt-get --yes --no-install-recommends install oracle-java8-installer
+    apt-get --yes --no-install-recommends install oracle-java9-installer
     
     # Python 2 & 3
 RUN apt -y install python python-pip python3 python3-pip
