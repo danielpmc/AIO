@@ -24,8 +24,7 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
     && apt -y install make \
     && apt -y install build-essential \
     && apt -y install wget \ 
-    && apt -y install curl \
-    && apt -y install neofetch 
+    && apt -y install curl
     
 # Install basic software support
 RUN apt-get update && \
