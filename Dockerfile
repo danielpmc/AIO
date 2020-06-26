@@ -5,7 +5,7 @@ MAINTAINER danielpmc, <danielpd93@gmail.com>
 RUN apt update \
     && apt upgrade -y \
     && apt -y install curl software-properties-common locales git \
-    && apt-get install -y openjdk-8-jdk && \
+    && apt-get install -y openjdk-8-jdk \
     && useradd -d /home/container -m container \
     && apt-get update
 
