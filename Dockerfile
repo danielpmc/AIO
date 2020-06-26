@@ -5,6 +5,7 @@ MAINTAINER danielpmc, <danielpd93@gmail.com>
 RUN apt update \
     && apt upgrade -y \
     && apt -y install curl software-properties-common locales git \
+    && apt-get install -y openjdk-8-jdk && \
     && useradd -d /home/container -m container \
     && apt-get update
 
@@ -29,15 +30,6 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - \
 # Install basic software support
 RUN apt-get update && \
     apt-get install --yes software-properties-common
-
-# Add java to apt
-RUN add-apt-repository ppa:webupd8team/java && \
-    echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
-    echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
-
-# Install Java 8
-RUN apt-get update && \
-    apt-get --yes --no-install-recommends install oracle-java9-installer
     
     # Python 2 & 3
 RUN apt -y install python python-pip python3 python3-pip
