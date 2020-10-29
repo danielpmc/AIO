@@ -1,11 +1,11 @@
-FROM ubuntu:16.04
+FROM debian:buster
 
 MAINTAINER danielpmc, <danielpd93@gmail.com>
 
 RUN apt update \
     && apt upgrade -y \
     && apt -y install curl software-properties-common locales git \
-    && apt-get install -y openjdk-8-jdk \
+    && apt-get install -y default-jre \
     && useradd -d /home/container -m container \
     && apt-get update
 
