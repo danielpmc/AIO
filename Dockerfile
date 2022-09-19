@@ -48,6 +48,4 @@ WORKDIR /home/container
 
 RUN wget https://raw.githubusercontent.com/DanBot-Hosting/pterodactyl-eggs/aio/entrypoint.sh
 
-COPY ./entrypoint.sh /entrypoint.sh
-
 CMD ["/bin/bash", "/entrypoint.sh"]
